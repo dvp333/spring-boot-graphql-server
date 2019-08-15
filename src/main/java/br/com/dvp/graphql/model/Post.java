@@ -12,7 +12,7 @@ public class Post {
 	@Id
 	@Column
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private String id;
+	private Long id;
 	
 	@Column
     private String title;
@@ -21,12 +21,12 @@ public class Post {
     private String category;
 	
 	@Column
-    private String authorId;
+    private Long authorId;
     
-	public String getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getTitle() {
@@ -41,10 +41,10 @@ public class Post {
 	public void setCategory(String category) {
 		this.category = category;
 	}
-	public String getAuthorId() {
+	public Long getAuthorId() {
 		return authorId;
 	}
-	public void setAuthorId(String authorId) {
+	public void setAuthorId(Long authorId) {
 		this.authorId = authorId;
 	}
     
