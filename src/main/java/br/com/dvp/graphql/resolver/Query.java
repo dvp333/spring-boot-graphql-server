@@ -1,21 +1,26 @@
 package br.com.dvp.graphql.resolver;
 
+import java.util.Arrays;
 import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.PageRequest;
 
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
 
-import br.com.dvp.graphql.model.Post;
-import br.com.dvp.graphql.repository.PostRepository;
+import br.com.dvp.graphql.model.Empregado;
 
 public class Query implements GraphQLQueryResolver {
-    
-	@Autowired
-	private PostRepository postRepository;
-    
-    public List<Post> getRecentPosts(int count, int offset) {
-        return postRepository.findAll(PageRequest.of(offset, count)).getContent();
+
+    List<Empregado> empregados = Arrays.asList(new Empregado());
+ 
+    public List<Empregado> obterEmpregados() {
+       return empregados;
     }
-}
+ 
+    public long contarEmpregados() {
+       return empregados.size();
+    }
+ 
+    public Empregado obterEmpregadoPorId(Long id) {
+       return empregados.stream().filter(e -> e.getId() == id).findFirst().get();
+    }
+ 
+ }
