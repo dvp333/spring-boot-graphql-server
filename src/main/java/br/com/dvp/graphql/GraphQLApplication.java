@@ -15,13 +15,13 @@ public class GraphQLApplication {
 	}
 	
 	@Bean
-   public Query query() {
-      return new Query();
-   }
+	public Query query() {
+		return new Query();
+	}
 
-   @Bean
-   public Mutation mutation() {
-	   return new Mutation();
-   }
+	@Bean
+	public Mutation mutation() {
+		return new Mutation();
+	}
 
 }
