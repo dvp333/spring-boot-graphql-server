@@ -4,6 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import br.com.dvp.graphql.repository.EmpregadoRepository;
 import br.com.dvp.graphql.resolver.Mutation;
 import br.com.dvp.graphql.resolver.Query;
 
@@ -15,13 +16,13 @@ public class GraphQLApplication {
 	}
 	
 	@Bean
-	public Query query() {
-		return new Query();
+	public Query query(EmpregadoRepository empregadoRepository) {
+		return new Query(empregadoRepository);
 	}
 
 	@Bean
-	public Mutation mutation() {
-		return new Mutation();
+	public Mutation mutation(EmpregadoRepository empregadoRepository) {
+		return new Mutation(empregadoRepository);
 	}
 
 }

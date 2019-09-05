@@ -32,8 +32,7 @@ public class Empregado {
 
     public Empregado(){}
 
-    public Empregado(Long id, String nome, Integer idade, LocalDate nascimento) {
-        this.id = id;
+    public Empregado(String nome, Integer idade, LocalDate nascimento) {
         this.nome = nome;
         this.idade = idade;
         this.nascimento = nascimento;
